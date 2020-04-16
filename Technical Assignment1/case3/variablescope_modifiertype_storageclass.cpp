@@ -10,23 +10,7 @@ int iE;
 
 extern int iEx=20;
 
-void variablescope()                        	//variable scope function
 
-{
-
-	int ilvar=20;                      //local variable
-
-	cout<<"-----------------------------------------------------------"<<endl;
-
-	cout<<"                     VARIABLE SCOPE                        "<<endl;
-
-	cout<<"global variable is:"<<iGvar<<endl;   
-
-	cout<<"local variable  is:"<<ilvar<<endl;
-
-	cout<<"-----------------------------------------------------------"<<endl;
-
-}
 
 void modifiertypes()                     	//modifier types function
 
@@ -51,6 +35,23 @@ void modifiertypes()                     	//modifier types function
 	cout<<"long ldata         : "<<lData<<endl;
 
 	cout<<"short sdata        : "<<sData<<endl;
+
+	cout<<"-----------------------------------------------------------"<<endl;
+
+}
+void variablescope()                        	//variable scope function
+
+{
+
+	int ilvar=20;                      //local variable
+
+	cout<<"-----------------------------------------------------------"<<endl;
+
+	cout<<"                     VARIABLE SCOPE                        "<<endl;
+
+	cout<<"global variable is:"<<iGvar<<endl;   
+
+	cout<<"local variable  is:"<<ilvar<<endl;
 
 	cout<<"-----------------------------------------------------------"<<endl;
 
