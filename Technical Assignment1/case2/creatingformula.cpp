@@ -1,7 +1,7 @@
-/* filename       :     case2.cpp
+/* filename          :     case2.cpp
    program name      :     creating formula for a given series to obtain the output.
-   written by     :     preethi
-    date    :     11/04/2020
+   written by        :     preethi
+    date             :     11/04/2020
 */
 
 #include<bits/stdc++.h>
