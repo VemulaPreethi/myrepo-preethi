@@ -1,4 +1,9 @@
-
+/* filename	: case1.cpp
+   program name	: Finding the datatype and size of a value using commandline arguments
+   written by	: preethi
+   date		: 10/04/2020
+*/
+  
 #include <iostream> 
 
 #include<string.h>
@@ -9,97 +14,80 @@
 
 #include<cctype>
 
-
-
 #include<bits/stdc++.h>
 
 using namespace std; 
 
-  
-
 int main(int argc, char** argv) 
 
 { 
-
-  
-
-    char ch;//Declaring character datatype
-
-    int c,i;//Declaring integer datatype
-
-    double d;//Declaring double datatype
-
+    //Declaring character datatype
+    char ch;	
     
-
+    //Declaring integer datatype
+    int c,i;
+    
+    //Declaring double datatype
+    double d;
+	
     cout << "You have entered " << argc 
 
          << " arguments:" << "\n";
          	cout<<"TYPE"<<"    "<<"value"<<"  "<<"size"<<endl;
-
-         
-
-  for(i=1;i<argc;i++)//for loop to increase the i value with respect to argument counter
-
-  {
-      
-
-
-        if(argv[i]>=0)//if condition for checking whether the value greater than zero or not
-
+	
+	//for loop to increase the i value with respect to argument counter
+ for(i=1;i<argc;i++)
+	  
+     {
+	//if condition for checking whether the value greater than zero or not
+        if(argv[i]>=0)
 	{
-
-		c=atoi(argv[i]);//atol function accepts a string and convert to integer
-
-		d=atof(argv[i]);//atof function accepts a string and convert to float
-
+	      //atol function accepts a string and convert to integer
+	       c=atoi(argv[i]);
 		
+	       //atof function accepts a string and convert to float
+	       d=atof(argv[i]);//atof function accepts a string and convert to float
 
-		if(c==d) //if condition for comparing the values
+	       if(c==d) //if condition for comparing the values
 
-		{
+	      {
 
-                 cout<<"Integer"<<"   "<<c<<"    "<<sizeof(int)<<endl;
+                cout<<"Integer"<<"   "<<c<<"    "<<sizeof(int)<<endl;
+             
+	       }
 
-		}
+	  else
 
-		else
+	      {
 
-		{
+		  cout<<"Double"<<"   "<<d<<"    "<<sizeof(double)<<endl;
+	       }
 
-		cout<<"Double"<<"   "<<d<<"    "<<sizeof(double)<<endl;
-
-		}
-
-	}
+         }
 
 	else
 
 	{
-
 	 
+	     ch=atoi(argv[i]);
 
-// cout<<argv[i].size()<<endl;
+              if((ch==1))
 
-ch=atoi(argv[i]);
+	     {
 
-          if((ch==1))
+	   	 cout<<sizeof(char);
 
-	   {
-
-	   cout<<sizeof(char);
-
-	   }
+	      }
 
 	   else
 
-	   {
+	    {
 
-	   cout<<sizeof(wchar_t);
+	   	cout<<sizeof(wchar_t);
 
-	   }
+	    }
 
 	}
-
 }
 
    return 0; 
