@@ -4,26 +4,67 @@
     date             :     11/04/2020
 */
 
-#include<bits/stdc++.h>
-
+#include<iostream>
+#include<string.h>
 using namespace std;
-//funtion to calculate
-int sqsum(int n)
-
+int
+SumofSquares (int inum)
 {
-    //returning the value after calculation
-    return(n*(n+1)/2)*(2*n+1)/3;
+
+  int isum;
+
+  //returning the value after calculation
+  isum = (inum * (inum + 1) / 2) * (2 * inum + 1) / 3;
+
+  return isum;
+   
 }
 
-int main()
-
+int main (int argc, char *argv[])
 {
 
-    int n=4;
-    
-    //calling function
-    cout<<sqsum(n)<<endl;
+  int inum;
+  int iresult;
 
-    return 0;
+  if (argc == 2)
+
+    {
+      //created a help command
+
+      if (strcmp (argv[1], "-h") == 0)
+
+	    {
+
+	        cout << "Input:Integer" << endl;
+
+	    }
+
+    }
+
+     else
+
+    {
+
+      cout << "enter a number:";
+
+      cin >> inum;
+
+      if (inum > 0)
+
+	    {
+
+	        iresult = SumofSquares (inum);
+
+	        cout << "Output:" << iresult;
+
+        }
+
+      else
+
+	        cout << "Enter Positive Integer" << endl;
+
+    }
+
+  return 0;
 
 }
