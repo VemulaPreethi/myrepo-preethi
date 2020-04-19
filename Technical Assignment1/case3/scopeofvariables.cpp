@@ -26,7 +26,7 @@ int main(int argc,char *argv[])        // main function
 {
     if(argc>2) 
 	{
-		if(strcmp(argv[1],"-h")==0)     //created help command
+		if(strcmp(argv[1],"-h")==0)     //creating help command
         {
 			cout<<"\n Usage of file --> \n"<<endl;
 			cout<<" Program used to demonstrate Variable Scope "<<endl;
