@@ -1,3 +1,8 @@
+/*file name	:	storageclasses.cpp
+  program name	:	Program that explains storage classes
+  written by	:	preethi
+  date		:	13/04/2020
+  */
 #include<iostream>
 #include<string.h>
 using namespace std;
@@ -32,7 +37,6 @@ int staticFun()
     count++; 
     return count; 
 } 
-
   
 // Function containing non-static variables 
 // memory is destroyed 
@@ -44,13 +48,13 @@ int nonStaticFun()
     count++; 
     return count; 
 } 
-int main(int argc,char *argv[])        // main function
+int main(int argc,char *argv[])       
 {
     if(argc>2) 
 
 	{
-
-		if(strcmp(argv[1],"-h")==0)     //creating help command
+	        //creating help command
+		if(strcmp(argv[1],"-h")==0)    
         {
 			cout<<"\n Usage of file --> \n"<<endl;
 			cout<<" Program used to demonstrate types of storage classes"<<endl;
@@ -68,7 +72,5 @@ int main(int argc,char *argv[])        // main function
     cout << nonStaticFun() <<endl;
     cout << nonStaticFun() <<endl;
     }
-    return 0;
-    
-    
+    return 0;      
 }
