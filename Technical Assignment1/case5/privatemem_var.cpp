@@ -38,7 +38,7 @@ int main(int argc,char **argv)
     if(argc == 2 && strcmp(argv[1], "-h")==0)// creating help command 
     {
 
-        cout<<"The main purpose of this program is to how to use & Declare Different way to initialize the private member variables in a class"<<endl;
+        cout<<"A way to initialize private member variables"<<endl;
     }
     else
     {
