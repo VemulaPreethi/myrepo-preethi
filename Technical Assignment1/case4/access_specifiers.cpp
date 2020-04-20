@@ -7,64 +7,54 @@
 #include<string.h>
 using namespace std;
  //class that explains public,private and protected variables
-class Box {
+class Box
+{
 
     public:
       double length;
-      void setWidth( double wid );
-      double getWidth( void );
- 
+     
     private:
       double width;
       
     protected:
       double height;
+      
+    //member functions of base class 
+    public:
+      double getWidth() {
+      return width ;
+        } 
+    void setWidth( double wid ) {
+    width = wid;
+    }
 };
-// SmallBox is the derived class
+
+//SmallBox is the derived class
 class SmallBox:Box
 { 
-   public:
-      void setSmallHeight( double hig);
-      double getSmallHeight( void );
-};
   
-// Member functions definitions
-double Box::getWidth(void){
-   return width ;
-}
- 
-void Box::setWidth( double wid ) {
-   width = wid;
-}
-
-// Member functions of child class
-double SmallBox::getSmallHeight(void){
-   return height ;
-}
- 
-void SmallBox::setSmallHeight( double hig) {
-   height = hig;
-}
-
+    //member functions of derived class
+    public:
+     double getSmallHeight() {
+      return height ;
+    }
+    void setSmallHeight( double hig) {
+    height = hig;
+    }     
+};
  
 int main(int argc,char *argv[])
 {
     //creating help command
     if(argc>=2)
     {
-
-	    if(strcmp(argv[1],"-h")==0)				
-
+	  if(strcmp(argv[1],"-h")==0)				
 	    {
-
-            cout<<"	usage of access specifiers	"<<endl;
-
+            cout<<"----	usage of access specifiers--------"<<endl;
 	    }
     }
-
-	else
+    else
     {
-        
    Box box;
  
    // setting box length without member function
@@ -76,9 +66,8 @@ int main(int argc,char *argv[])
    box.setWidth(10.0);  // Using member function to set it.
    cout << "Width of box(private variable)      : " << box.getWidth() <<endl;
    
-
    SmallBox sbox;
- 
+   
    // setting box height using member function
    sbox.setSmallHeight(5.0);
    //ok:because height is called from derived class.
