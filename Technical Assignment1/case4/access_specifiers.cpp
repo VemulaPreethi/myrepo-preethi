@@ -1,4 +1,8 @@
-*******************************************************************************/
+/*file name	:	access_specifiers.cpp
+  program name	:	program to demonstrate access specifiers
+  written by	:	preethi
+  date		:	14/04/2020
+  */
 #include<iostream>
 #include<string.h>
 using namespace std;
@@ -17,16 +21,15 @@ class Box {
       double height;
 };
 // SmallBox is the derived class
-class SmallBox:Box { 
+class SmallBox:Box
+{ 
    public:
       void setSmallHeight( double hig);
       double getSmallHeight( void );
 };
- 
-
- 
+  
 // Member functions definitions
-double Box::getWidth(void) {
+double Box::getWidth(void){
    return width ;
 }
  
@@ -35,7 +38,7 @@ void Box::setWidth( double wid ) {
 }
 
 // Member functions of child class
-double SmallBox::getSmallHeight(void) {
+double SmallBox::getSmallHeight(void){
    return height ;
 }
  
@@ -73,6 +76,7 @@ int main(int argc,char *argv[])
    box.setWidth(10.0);  // Using member function to set it.
    cout << "Width of box(private variable)      : " << box.getWidth() <<endl;
    
+
    SmallBox sbox;
  
    // setting box height using member function
