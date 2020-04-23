@@ -22,7 +22,7 @@ int main(int argc,char* argv[])
         char cOpt;
         while(1)
         {
-            cout<<"Select your option:"<<endl<<"1.add"<<endl<<"2.delete"<<endl<<"3.display"<<endl <<"4.search "<<endl<<"5.exit"<<endl;
+            cout<<"Select your option:"<<endl<<"1.add"<<endl<<"2.delete"<<endl<<"3.display"<<endl<<"4.exit"<<endl;
             cin>>cOpt;
             switch(cOpt)
             {
@@ -37,10 +37,8 @@ int main(int argc,char* argv[])
                         showfromfile();
                         break;
                 case '4':
-                        searching(std);
-                        break;
-                case '5':
-                            exit(0);
+                        exit(0);
+             
                 default:
                         return 0;
             }
