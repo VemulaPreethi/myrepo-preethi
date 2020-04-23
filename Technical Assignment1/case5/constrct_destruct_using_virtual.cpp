@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 {
     if(argc == 2 && strcmp(argv[1], "-h")==0) //help command 
     {
-        cout<<"The main purpose of this program is to how to use & Declare the Local & Global scope variable"<<endl;
+        cout<<"This program desribes the Order of  construction and destruction of objects with virtual  "<<endl;
     }
     else{
     // Call to virtual_function during construction doesn't
