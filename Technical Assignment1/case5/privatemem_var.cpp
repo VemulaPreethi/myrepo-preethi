@@ -11,7 +11,6 @@ using namespace std;
 class A//class Declaration
 
 {
-
     private://private data member
 
     int a,c;
