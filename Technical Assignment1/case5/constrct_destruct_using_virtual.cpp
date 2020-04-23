@@ -49,14 +49,14 @@ int main(int argc, char **argv)
 
     // even though we are constructing an instance of B, not A.
 
-     B myObject;
+     B obj;
 
 
     // This call behaves like a normal virtual function call.
 
     // Print statement shows it invokes B::virtual_function.
 
-    myObject.virtual_function();
+    obj.virtual_function();
 
 }
 
