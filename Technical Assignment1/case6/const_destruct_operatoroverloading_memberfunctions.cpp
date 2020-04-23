@@ -1,11 +1,7 @@
 /*filename      :   case6.cpp
-
   program name  :   program that describes  constructors/destructor/operator overloading/member functions.
-
   written by    :   preethi
-
   date          :   18/04/2020
-
   */
 
 #include<iostream>
