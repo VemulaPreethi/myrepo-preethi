@@ -175,7 +175,7 @@ void deletefromfile(vector<Employee> &std)
 
 //displaying contents in the file
 
-void list()
+void showfromfile()
 {
     Employee e;
     ifstream in("notes.ini",ios::in);
