@@ -51,11 +51,7 @@ public:
 	{
 		iVal=inum;
 	}
-	//setName function
-/*	void setName(char cname[])
-	{
-		cName=cName;
-	}*/
+
 	//destructor 
 	~Data()
 	{
