@@ -5,91 +5,47 @@
 */
   
 #include <iostream> 
-
 #include<string.h>
-
 #include<stdlib.h>
-
-#include<typeinfo>
-
-#include<cctype>
-
-#include<bits/stdc++.h>
-
+#include<cmath>
 using namespace std; 
-
 int main(int argc, char** argv) 
-
 { 
-    //Declaring character datatype
-    char ch;	
-    
-    //Declaring integer datatype
-    int c,i;
-    
-    //Declaring double datatype
-    double d;
-	
-    cout << "You have entered " << argc 
-
-         << " arguments:" << "\n";
-         	cout<<"TYPE"<<"    "<<"value"<<"  "<<"size"<<endl;
-	
-	//for loop to increase the i value with respect to argument counter
- for(i=1;i<argc;i++)
-	  
-     {
-	//if condition for checking whether the value greater than zero or not
-        if(argv[i]>=0)
+ if(argc == 2 && strcmp(argv[1], "-h")==0) //help command 
+   
+    {
+        cout<<"Enter command line arguments of your choice"<<endl;
+        cout<<"The main purpose of this program is to display the value and size of the datatype in which it is stored."<<endl;
+    }
+    else
+    {
+        cout<<"Type     "<<"Value       " <<"size       "<<endl;
+        cout<<"---------------------------------"<<endl;
+        
+	for (int i = 1; i < argc; ++i)
 	{
-	      //atol function accepts a string and convert to integer
-	       c=atoi(argv[i]);
-		
-	       //atof function accepts a string and convert to float
-	       d=atof(argv[i]);//atof function accepts a string and convert to float
-
-	       if(c==d) //if condition for comparing the values
-
-	      {
-
-                cout<<"Integer"<<"   "<<c<<"    "<<sizeof(int)<<endl;
-             
-	       }
-
-	  else
-
-	      {
-
-		  cout<<"Double"<<"   "<<d<<"    "<<sizeof(double)<<endl;
-	       }
-
-         }
-
-	else
-
-	{
-	 
-	     ch=atoi(argv[i]);
-
-              if((ch==1))
-
-	     {
-
-	   	 cout<<sizeof(char);
-
-	      }
-
-	   else
-
-	    {
-
-	   	cout<<sizeof(wchar_t);
-
-	    }
-
+	
+    if (((strlen(argv[i]))==1) && (*argv[i]>='a'&& *argv[i]<='z') || (*argv[i]>='A' && *argv[i]<='Z'))
+   {
+       cout<<"char      "<<argv[i]<<"       "<<sizeof(char)<<endl;
+   }
+   else if((strlen(argv[i]))!=1)
+   {
+       cout<<"string      "<<argv[i]<<"       "<<sizeof(string)<<endl;
+   }
+    //atoi function accepts a string and convert to integer
+   else if(atoi(argv[i])>=0 && atoi(argv[i])<=9)
+   {
+       cout<<"Int       "<<argv[i]<<"           "<<sizeof(int)<<endl;
+   }
+   //atof function accepts a string and convert to float
+   else if((atof(argv[i]))==(atof(argv[i])) )
+   {
+       cout<<"Double      "<<argv[i]<<"       "<<sizeof(double)<<endl;
+       
+   }
+   cout << "\n" ;
 	}
+	return 0; 
 }
-
-   return 0; 
-
 }
