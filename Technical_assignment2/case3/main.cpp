@@ -31,12 +31,12 @@ int main(int argc, char *argv[])
         {
             if(strcmp(argv[2],"-f")==0)
             {
-                eobj.encrypt(argv[5]);
+                eobj.encrypt(argv[5],argv[3]);
                 return 0;
             }
             else if(strcmp(argv[2],"-k")==0)
             {
-                eobj.encrypt(argv[3]);
+                eobj.encrypt(argv[3],argv[5]);
             }
         }
        else if(strcmp(argv[1],"-d")==0)
@@ -44,12 +44,12 @@ int main(int argc, char *argv[])
             
             if(strcmp(argv[2],"-f")==0)
             {
-                dobj.decrypt(argv[5]);
+                dobj.decrypt(argv[5],argv[3]);
                 return 0;
             }
             else if(strcmp(argv[2],"-k")==0)
             {
-                dobj.decrypt(argv[3]);
+                dobj.decrypt(argv[3],argv[5]);
                 return 0;
             }
         }
