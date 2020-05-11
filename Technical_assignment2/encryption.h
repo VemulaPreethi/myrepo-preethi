@@ -17,7 +17,7 @@ class Encryption
   void encrypt(char* ckey) 
     { 
         //opening sample for reading data
-        ifstream myfile ("a.txt");
+        ifstream myfile ("sample.txt");
   
         //asking user an alphaneumeric character to replace space
         cout<<"enter an alphaneumeric character:";
