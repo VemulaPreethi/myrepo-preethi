@@ -15,7 +15,7 @@ class Decryption
     string str;
    string skey;
    
-    void decrypt(char* key) 
+    void decrypt(char* key,char* filename) 
     { 
     //opening input file
     ifstream myfile ("encrypt.txt");
@@ -31,6 +31,8 @@ class Decryption
 		   {
 		      //key verification
 		      getline (myfile,skey);
+		 if(strcmp(filename,"encrypt.txt")==0)
+		 {
 		    
 	   if(strcmp(key_value.c_str(),skey.c_str())==0)
 			{
@@ -70,7 +72,12 @@ class Decryption
 			{
 			    cout<<"you have entered wrong key"<<endl;
 			}
-		myfile.close();		
+		myfile.close();	
+		 }//closing if(verifyfilename)
+		 else
+		 {
+		     cout<<"you have entered wrong filename"<<endl;
+		 }
 	}//end of input file
 	
 	//if the file is not open		
