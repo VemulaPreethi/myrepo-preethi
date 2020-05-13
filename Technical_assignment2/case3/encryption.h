@@ -3,64 +3,96 @@
    written by	: preethi
    date		: 10/05/2020
 */
-#include<bits/stdc++.h>
-#include"decryption.h"
-#include"encryption.h"
+
+#include<bits/stdc++.h> 
 #include<iostream>
 #include<string.h>
 #include<fstream>
 using namespace std; 
-   
-int main(int argc, char *argv[])
+class Encryption
 {
-     if(argc==2)
-    {
-         //created a help command
-        if(strcmp(argv[1],"-h")==0)
+    public:
+     string str;
+     //to store an alphanuemeric character
+     char cvar;
+     
+ /* Function  :   encrypt
+  Usage     :   to encrypt the data from sample text file
+*/
+
+  void encrypt(char* ckey,char* filename) 
+    { 
+         if(strcmp(filename,"inputfile.txt")==0)
         {
-            cout<<"Enter -e to encrypt data or -d to decrypt data ";
-            cout<<"followed by -f [filename] and -k [key] or viceversa ";
-            return 0;
-        }
-    }
-    else if(argc>2)
-    {
-        Encryption eobj;
-        Decryption dobj;
-        if(strcmp(argv[1],"-e")==0)
-        {
-            if(strcmp(argv[2],"-f")==0)
-            {
-                eobj.encrypt(argv[5],argv[3]);
-                return 0;
-            }
-            else if(strcmp(argv[2],"-k")==0)
-            {
-                eobj.encrypt(argv[3],argv[5]);
-            }
-        }
-       else if(strcmp(argv[1],"-d")==0)
-        {
-            
-            if(strcmp(argv[2],"-f")==0)
-            {
-                dobj.decrypt(argv[5],argv[3]);
-                return 0;
-            }
-            else if(strcmp(argv[2],"-k")==0)
-            {
-                dobj.decrypt(argv[3],argv[5]);
-                return 0;
-            }
-        }
-        else 
-        {
-            cout<<"you have entered wrong format!!"<<endl;
-            cout<<"check -h for more help"<<endl;
-            return 0;
-        }
-       
-    }
-    
+        //opening sample for reading data
+        ifstream myfile ("inputfile.txt");
+  
+        //asking user an alphaneumeric character to replace space
+        cout<<"enter an alphaneumeric character:";
+        cin>>cvar;
    
-}
+        //opening file to write encrypted data
+         ofstream outfile ("encrypt.txt");
+        if (outfile.is_open())
+         {
+            //setting the key for further decryption
+             outfile<<ckey<<endl;
+ 	        if (myfile.is_open())
+		     {
+				    while (! myfile.eof())	
+			        {
+			        //to continue line by line
+				        for(int p=0;p<=20;p++)
+			        	{
+		                  //gets first line of the file
+				        	getline (myfile,str);
+				
+			    	        //logic for for encrypting data	
+				            int len=str.length();
+	                        int iword=0;	
+        	                for(int icount=0;icount<len;icount++)
+            	             {
+	        	                if(str[icount]==' ')
+	            	             {
+			                         reverse(str.begin()+iword,str.begin()+icount);
+			                      //replaces space with alphaneumeric character
+		            	              str[icount]=cvar;
+		            	              iword=icount+1;
+	        	                 }
+		                         else if(icount==len-1)
+	                            {
+		        	                    reverse(str.begin()+iword,str.end());
+		                          }
+	                         }
+	                   //writes the encrypted data line by line to the outfile 
+                       outfile<<str<<endl;
+	                     break;				
+			        	}
+			    //end of file
+			        }
+			//closing sample file
+			myfile.close();
+        
+	    	}
+		 //if file is not open
+		else
+		{
+		    cout<<"cannot open file"<<endl; 
+		}
+	outfile.close();	
+   //closing outfile
+    }	
+   //if file is not open
+ else
+  {
+    cout << "Unable to open file";
+  }
+ }//closing if(filename verfiction)
+ else
+ {
+     cout<<"you have entered wrong file name "<<endl;
+ }
+        
+ }
+ //end of class
+};
