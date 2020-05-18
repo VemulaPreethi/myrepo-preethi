@@ -89,7 +89,7 @@ bool Encrypt_Decrypt::Decryption(char* key,char* filename)
 	         if((line[icount])==salpha_neumeric[0])
 	         {
 			  reverse(line.begin()+iword,line.begin()+icount);
-			  //replaces space with alphaneumeric character
+			  //replaces alphaneumeric character with space
 		      line[icount]=' ';
 		      iword=icount+1;
 	         }
