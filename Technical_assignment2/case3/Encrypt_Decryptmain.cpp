@@ -1,68 +1,69 @@
-
+/*filename      :   "Encrypt_Decryptmain.cpp"
+  functionality :    main function for the program is written in this file 
+  written by    :   preethi
+  date          :   25/05/2020
+  */
 #include "Encrypt_Decrypt.h"
 #include <iostream>
 #include<string.h>
 
 using namespace std;
 
-int main(int argc, char *argv[])
+int main(int argc,char *argv[])
 {
-     if(argc==2)
+    for(int iargcount=1;iargcount<=argc;iargcount++)
     {
-         //created a help command
-        if(strcmp(argv[1],"-h")==0)
-        {
+        if(strcmp(argv[iargcount],"-h")==0)
+       {
             cout<<"Enter -e to encrypt data or -d to decrypt data ";
             cout<<"followed by -f [filename] and -k [key] or viceversa ";
             return 0;
         }
-    }
-    else if(argc>2)
-    {
-        Encrypt_Decrypt encryptdecrypt;
-        if(strcmp(argv[1],"-e")==0)
-        {
-           if(strcmp(argv[2],"-f")==0 && strcmp(argv[4],"-k")==0)
-            {
-              if(encryptdecrypt.Encryption(argv[5],argv[3])==1)
-              cout<<"Your file has been encrypted"<<endl;
-              else
-              cout<<"Failed to encrypt!"<<endl;  
-            }
-            else if(strcmp(argv[2],"-k")==0 && strcmp(argv[4],"-f")==0)
-            {
-                if(encryptdecrypt.Encryption(argv[3],argv[5])==1)
-              cout<<"Your file has been encrypted"<<endl;
-              else
-              cout<<"Failed to encrypt!"<<endl;  
-            }
-        }
-       else if(strcmp(argv[1],"-d")==0)
+        else if(strcmp(argv[iargcount],"-e")==0)
         {
             
-            if(strcmp(argv[2],"-f")==0 && strcmp(argv[4],"-k")==0)
+            if((strcmp(argv[iargcount+1],"-f")==0 && strcmp(argv[iargcount+3],"-k")==0))
             {
-                if(encryptdecrypt.Decryption(argv[5],argv[3])==1)
-              cout<<"Your file has been decrypted"<<endl;
+                Encrypt_Decrypt encryptdecrypt;
+                if(encryptdecrypt.Encryption(argv[iargcount+4],argv[iargcount+2])==1)
+              cout<<"Your file has been encrypted"<<endl;
               else
-              cout<<"Failed to decrypt!"<<endl; 
+              cout<<"Failed to encrypt!"<<endl;  
             }
-            else  if(strcmp(argv[2],"-k")==0 && strcmp(argv[4],"-f")==0)
-            {
-             if(encryptdecrypt.Encryption(argv[3],argv[5])==1)
-              cout<<"Your file has been decrypted"<<endl;
+           else if((strcmp(argv[iargcount+3],"-k")==0 && strcmp(argv[iargcount+1],"-f")==0)) 
+           {
+               
+                Encrypt_Decrypt encryptdecrypt;
+                if(encryptdecrypt.Encryption(argv[iargcount+2],argv[iargcount+4])==1)
+              cout<<"Your file has been encrypted"<<endl;
               else
-              cout<<"Failed to decrypt!"<<endl;  
-            }
+              cout<<"Failed to encrypt!"<<endl;  
+           }
         }
-        else 
+        else if(strcmp(argv[iargcount],"-d")==0)
+        {
+         if((strcmp(argv[iargcount+1],"-f")==0 && strcmp(argv[iargcount+3],"-k")==0))
+         {
+             Encrypt_Decrypt encryptdecrypt;
+             if(encryptdecrypt.Decryption(argv[iargcount+4],argv[iargcount+2])==1)
+             cout<<"Your file has been decrypted"<<endl;
+             else
+             cout<<"Failed to decrypt!"<<endl; 
+         }
+        else if((strcmp(argv[iargcount+3],"-k")==0 && strcmp(argv[iargcount+1],"-f")==0)) 
+        {
+            Encrypt_Decrypt encryptdecrypt;
+            if(encryptdecrypt.Encryption(argv[iargcount+2],argv[iargcount+4])==1)
+            cout<<"Your file has been decrypted"<<endl;
+            else
+            cout<<"Failed to decrypt!"<<endl;  
+         }
+        }
+        else
         {
             cout<<"you have entered wrong format!!"<<endl;
             cout<<"check -h for more help"<<endl;
             return 0;
         }
-       
     }
-    
-   
 }
