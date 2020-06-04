@@ -10,14 +10,10 @@
 #include<queue>
 using namespace std; 
 class keypad_lettercombinations
-{
-    
+{   
 private:
- 
 //Function to return a vector that contains all the generated letter combinations 
-vector<string> letterCombinationsUtil(const int number[], 
-                                      int i_size, 
-                                      const string table[]) 
+vector<string> letterCombinationsUtil(const int number[], int i_size, const string table[]) 
 { 
     // To store the generated letter combinations 
     vector<string> list; 
