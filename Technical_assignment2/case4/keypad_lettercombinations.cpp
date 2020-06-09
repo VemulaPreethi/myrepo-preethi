@@ -65,7 +65,7 @@ int main(int argc,char *argv[])
 		if(strcmp(argv[1],"-h")==0)     
         {
 		cout<<"\n Usage of file --> \n"<<endl;
-		cout<<" Program used to demonstrate types of modifiers"<<endl;
+		cout<<" Program used to demonstrate possible combinations of letters in phone keypad"<<endl;
 	}	
 }
 else
